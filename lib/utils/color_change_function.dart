@@ -4,8 +4,13 @@ import 'package:velocity_x/velocity_x.dart';
 
 import '../provider/sketch_setting.dart';
 
+/// ---> This is the Function to Change Color of Strokes <---
+
 showColorPickerDialog(BuildContext context) {
+  /// ---> Creating the instance of Drawing Setting Provider <--- ///
   final drawingSettings = Provider.of<DrawingSettings>(context, listen: false);
+
+  // Color List //
   final List<Color> colorOptions = [
     const Color.fromARGB(255, 200, 66, 57),
     const Color.fromARGB(255, 18, 106, 21),
@@ -17,6 +22,7 @@ showColorPickerDialog(BuildContext context) {
     Colors.white,
   ];
 
+  /// SHowing Dialog box with the colors option , tapping on the color will chagnge stroke color ///
   showDialog(
     context: context,
     builder: (BuildContext context) {
