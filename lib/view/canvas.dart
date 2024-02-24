@@ -12,6 +12,9 @@ class SketchingCanvas extends StatefulWidget {
   State<SketchingCanvas> createState() => _SketchingCanvasState();
 }
 
+/// --->>> This is The Main File Controlling Canvas using CustomPaints using Cunsumer2,DrawingSettings,
+/// DrawingStateManager Providers
+
 class _SketchingCanvasState extends State<SketchingCanvas> {
   final List<Offset> _points = [];
 
@@ -27,15 +30,20 @@ class _SketchingCanvasState extends State<SketchingCanvas> {
             });
           },
           onPanEnd: (DragEndDetails details) {
-            drawingStateManager.addStroke(List.from(_points),
-                drawingSettings.selectedColor, drawingSettings.strokeWidth);
+            drawingStateManager.addStroke(
+                List.from(_points),
+                drawingSettings.selectedColor,
+                drawingSettings
+                    .strokeWidth); //Getting the initial color and width from provider
             _points.clear();
           },
+          //Canvas will be White
           child: Container(
             color: Colors.white,
             child: CustomPaint(
               painter: SketchPainter(
-                strokes: drawingStateManager.strokes,
+                strokes: drawingStateManager
+                    .strokes, //Tracking the strokes using providers
               ),
             ),
           ),
@@ -45,7 +53,7 @@ class _SketchingCanvasState extends State<SketchingCanvas> {
   }
 }
 
-// Define SketchPainter class
+/// ---> Define SketchPainter class <--- ///
 class SketchPainter extends CustomPainter {
   final List<Stroke> strokes;
 
