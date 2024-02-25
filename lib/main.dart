@@ -41,6 +41,6 @@ class MyApp extends StatelessWidget {
             useMaterial3: true,
             appBarTheme: const AppBarTheme(
                 iconTheme: IconThemeData(color: Colors.white))),
-        home: SketchScreen());
+        home: const SketchScreen());
   }
 }

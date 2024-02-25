@@ -5,8 +5,6 @@ import 'package:sketch_app/provider/download_provider.dart';
 import 'package:sketch_app/view/canvas.dart';
 import 'package:velocity_x/velocity_x.dart';
 import '../provider/sketch_provider.dart';
-import '../util/custom_color_change_alert.dart';
-import '../util/custom_width_change_alert.dart';
 import '../utils/color_change_bottom_sheet.dart';
 import '../utils/width_change_bottom_sheet.dart';
 
@@ -128,7 +126,7 @@ class SketchScreen extends StatelessWidget {
                     Consumer<CanvasImageDownload>(
                       builder: (context, canvasProvider, _) => RepaintBoundary(
                         key: canvasProvider.canvasKey,
-                        child: SketchingCanvas()
+                        child: const SketchingCanvas()
                             .box
                             .size(widthCount * 0.67, heightCount * 0.9)
                             .white

@@ -26,12 +26,12 @@ showColorPickerBottomSheet(BuildContext context) {
   showModalBottomSheet(
     context: context,
     builder: (BuildContext context) {
-      return Container(
+      return SizedBox(
         height: 200,
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
               child: Text(
                 "Select Color",
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),

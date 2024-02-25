@@ -13,12 +13,12 @@ showStrokeWidthBottomSheet(BuildContext context) {
     builder: (BuildContext context) {
       return Container(
         height: 200,
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             "Change Stroke Width".text.size(15).make(),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             StatefulBuilder(
               builder: (context, setState) {
                 return Slider(
@@ -36,7 +36,7 @@ showStrokeWidthBottomSheet(BuildContext context) {
                 );
               },
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop();
