@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:sketch_app/provider/download_provider.dart';
 import 'package:sketch_app/provider/sketch_provider.dart';
 import 'package:sketch_app/provider/sketch_setting.dart';
 import 'package:sketch_app/view/sketch_screen.dart';
 import 'package:provider/provider.dart';
 
 void main() {
+  final GlobalKey canvasKey = GlobalKey();
   runApp(MultiProvider(
     providers: [
       /// --- > This provider is For Undo,Redo,Clearing Cnavas Functionality <--- ///
@@ -15,6 +17,11 @@ void main() {
       /// --- > This provider is For Changing Color and Stroke Width Functionality <--- ///
       ChangeNotifierProvider(
         create: (_) => DrawingSettings(),
+      ),
+
+      /// --- > This provider is For Downloading <--- ///
+      ChangeNotifierProvider(
+        create: (_) => CanvasImageDownload(canvasKey: canvasKey),
       ),
     ],
     child: const MyApp(),
@@ -34,6 +41,6 @@ class MyApp extends StatelessWidget {
             useMaterial3: true,
             appBarTheme: const AppBarTheme(
                 iconTheme: IconThemeData(color: Colors.white))),
-        home: const SketchScreen());
+        home: SketchScreen());
   }
 }

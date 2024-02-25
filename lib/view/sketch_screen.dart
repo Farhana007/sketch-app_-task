@@ -1,11 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:sketch_app/provider/download_provider.dart';
 import 'package:sketch_app/view/canvas.dart';
 import 'package:velocity_x/velocity_x.dart';
 import '../provider/sketch_provider.dart';
-import '../utils/color_change_function.dart';
-import '../utils/stroke_change_function.dart';
+import '../util/custom_color_change_alert.dart';
+import '../util/custom_width_change_alert.dart';
+import '../utils/color_change_bottom_sheet.dart';
+import '../utils/width_change_bottom_sheet.dart';
 
 ///@Description:This screen Contains The UI of the app ,
 ///@param:Theres is no parameters fro this screen
@@ -18,11 +21,13 @@ class SketchScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //Height and Widht variable
-    double heightCount = MediaQuery.sizeOf(context).height;
-    double widthCount = MediaQuery.sizeOf(context).width;
+    double heightCount = MediaQuery.of(context).size.height;
+    double widthCount = MediaQuery.of(context).size.width;
     //--->Creating the Instance of Provider to call the functions <--- ///
     final drawingManager =
         Provider.of<DrawingStateManager>(context, listen: false);
+
+    final canvasImageDownload = Provider.of<CanvasImageDownload>(context);
 
     /// --->Scaffold StartS here <--- ///
     return Scaffold(
@@ -50,6 +55,7 @@ class SketchScreen extends StatelessWidget {
                             },
                             icon: const Icon(
                               Icons.undo,
+                              size: 30,
                               color: Colors.white,
                             )),
 
@@ -60,6 +66,7 @@ class SketchScreen extends StatelessWidget {
                             },
                             icon: const Icon(
                               Icons.redo,
+                              size: 30,
                               color: Colors.white,
                             )),
 
@@ -70,32 +77,47 @@ class SketchScreen extends StatelessWidget {
                             },
                             icon: const Icon(
                               CupertinoIcons.clear_circled,
+                              size: 30,
                               color: Colors.white,
                             )),
 
                         /**Button to Showing Color chosing Dialog*/
                         IconButton(
                             onPressed: () {
-                              showColorPickerDialog(context);
+                              showColorPickerBottomSheet(context);
                             },
                             icon: const Icon(
                               Icons.color_lens_rounded,
+                              size: 30,
                               color: Colors.white,
                             )),
 
                         /**Button to Showing  width chossing dialog*/
                         IconButton(
                             onPressed: () {
-                              showStrokeWidthDialog(context);
+                              showStrokeWidthBottomSheet(context);
                             },
                             icon: const Icon(
                               CupertinoIcons.circle,
+                              size: 30,
                               color: Colors.white,
                             )),
+                        const Spacer(),
+                        /**Button to Downlaod Option*/
+                        IconButton(
+                            onPressed: () {
+                              canvasImageDownload.saveCanvasImage(context);
+                            },
+                            icon: const Icon(
+                              Icons.download,
+                              size: 40,
+                              color: Colors.redAccent,
+                            )),
+                        20.heightBox,
                       ],
                     )
                         .box
-                        .size(widthCount * 0.25, heightCount * 0.9)
+                        .size(widthCount * 0.27, heightCount * 0.9)
                         .color(const Color.fromARGB(255, 67, 47, 131))
                         .border(
                             color: const Color.fromARGB(255, 49, 4, 63),
@@ -103,14 +125,19 @@ class SketchScreen extends StatelessWidget {
                         .make(),
 
                     /// ---> Second part of the Row , THis is the canvas <--- ///
-                    const SketchingCanvas()
-                        .box
-                        .size(widthCount * 0.7, heightCount * 0.9)
-                        .white
-                        .border(
-                            color: const Color.fromARGB(255, 69, 21, 5),
-                            width: 2)
-                        .make(),
+                    Consumer<CanvasImageDownload>(
+                      builder: (context, canvasProvider, _) => RepaintBoundary(
+                        key: canvasProvider.canvasKey,
+                        child: SketchingCanvas()
+                            .box
+                            .size(widthCount * 0.67, heightCount * 0.9)
+                            .white
+                            .border(
+                                color: const Color.fromARGB(255, 69, 21, 5),
+                                width: 2)
+                            .make(),
+                      ),
+                    ),
                   ],
                 )
               ]),
