@@ -28,7 +28,9 @@
   <p>Once the app is running on your device or emulator, you can try out the features.</p>
 
   <h2>Overview Of the app</h2>
-  <img src="https://github.com/Farhana007/sketch-app_-task/assets/106755038/adaff988-9124-43aa-b81a-9cf197b6e4fd" alt="Sketch App Overview">
+  <img src="https://github.com/Farhana007/sketch-app_-task/assets/overviewOfApp.mp4" alt="Sketch App Overview">
+   <h2>Apk File</h2>
+   <img src="https://github.com/Farhana007/sketch-app_-task/assets/app-release.apk" alt="Sketch App Overview">
 </body>
 
 </html>
