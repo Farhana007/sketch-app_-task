@@ -1,16 +1,34 @@
-# sketch_app
+<!DOCTYPE html>
+</head>
 
-A new Flutter project.
+<body>
+  <h1>Sketch App</h1>
 
-## Getting Started
+  <p>Welcome to the Sketch App project! This Flutter application allows users to create sketches with various features such as undoing, redoing, clearing the canvas, changing stroke color and width, and saving images.</p>
 
-This project is a starting point for a Flutter application.
+  <h2>Features</h2>
+  <ul>
+    <li><b>State Management:</b> Utilizes the Provider package for efficient state management.</li>
+    <li><b>Permission Handling:</b> Utilizes Permission Handler package for handling permissions related to image saving.</li>
+    <li><b>Image Saving:</b> Used image_gallery_saver package to save sketches created on the canvas.</li>
+    <li><b>Undo/Redo/Clear:</b> Provided buttons for undoing, redoing, and clearing the canvas.</li>
+    <li><b>Stroke Customization:</b> Users can change stroke color and width according to their preferences.</li>
+  </ul>
 
-A few resources to get you started if this is your first Flutter project:
+  <h2>How to Run the App</h2>
+  <ol>
+    <li>Open the project in your preferred IDE such as Visual Studio Code or Android Studio.</li>
+    <li>Ensure you have Flutter and Dart SDK installed on your system.</li>
+    <li>Execute <code>flutter clean</code> to remove any existing build artifacts.</li>
+    <li>Run <code>flutter pub get</code> to fetch dependencies specified in <code>pubspec.yaml</code>.</li>
+    <li>Run the project in debug or release mode using your IDE's tools or by executing <code>flutter run</code> command in the terminal.</li>
+  </ol>
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+  <h2>Usage</h2>
+  <p>Once the app is running on your device or emulator, you can try out the features.</p>
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+  <h2>Overview Of the app</h2>
+  <img src="https://github.com/Farhana007/sketch-app_-task/assets/106755038/adaff988-9124-43aa-b81a-9cf197b6e4fd" alt="Sketch App Overview">
+</body>
+
+</html>
