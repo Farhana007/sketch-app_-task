@@ -30,7 +30,9 @@
   <h2>Overview Of the app</h2>
   <img src="https://github.com/Farhana007/sketch-app_-task/assets/overviewOfApp.mp4" alt="Sketch App Overview">
    <h2>Apk File</h2>
-   <img src="https://github.com/Farhana007/sketch-app_-task/assets/app-release.apk" alt="Sketch App Overview">
+   <a src="https://github.com/Farhana007/sketch-app_-task/assets/app-release.apk" alt="Apk">
+    <h2>Documentation</h2>
+  <a src="https://docs.google.com/document/d/19Pg0baCPPW1f9Sn8p72AWzrtU5aTMz7HdGY4PFWO_CU/edit?usp=sharing" alt="Documentation">
 </body>
 
 </html>
