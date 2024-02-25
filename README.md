@@ -1,24 +1,34 @@
-Sketch App Readme:
-Welcome to the Sketch App project! This Flutter application allows users to create sketches with various features such as undoing, redoing, clearing the canvas, changing stroke color and width, and saving images.
+<!DOCTYPE html>
+</head>
 
-Features:
-State Management: Utilizes the Provider package for efficient state management.
-Permission Handling: Utilizes Permission Handler package for handling permissions related to image saving.
-Image Saving: Used image_gallery_saver package to save sketches created on the canvas.
-Undo/Redo/Clear: Provided buttons for undoing, redoing, and clearing the canvas.
-Stroke Customization: Users can change stroke color and width according to their preferences.
+<body>
+  <h1>Sketch App</h1>
 
-How to Run the App:
-To run the app locally, follow these steps:
-Open the project in your preferred IDE such as Visual Studio Code or Android Studio.
-Ensure you have Flutter and Dart SDK installed on your system.
-Execute flutter clean to remove any existing build artifacts.
-Run flutter pub get to fetch dependencies specified in pubspec.yaml.
-Run the project in debug or release mode using your IDE's tools or by executing flutter run command in the terminal.
-Usage
-Once the app is running on your device or emulator, you can try out the features.
+  <p>Welcome to the Sketch App project! This Flutter application allows users to create sketches with various features such as undoing, redoing, clearing the canvas, changing stroke color and width, and saving images.</p>
 
+  <h2>Features</h2>
+  <ul>
+    <li><b>State Management:</b> Utilizes the Provider package for efficient state management.</li>
+    <li><b>Permission Handling:</b> Utilizes Permission Handler package for handling permissions related to image saving.</li>
+    <li><b>Image Saving:</b> Used image_gallery_saver package to save sketches created on the canvas.</li>
+    <li><b>Undo/Redo/Clear:</b> Provided buttons for undoing, redoing, and clearing the canvas.</li>
+    <li><b>Stroke Customization:</b> Users can change stroke color and width according to their preferences.</li>
+  </ul>
 
-<b>Overview Of the app</b>
-https://github.com/Farhana007/sketch-app_-task/assets/106755038/adaff988-9124-43aa-b81a-9cf197b6e4fd
+  <h2>How to Run the App</h2>
+  <ol>
+    <li>Open the project in your preferred IDE such as Visual Studio Code or Android Studio.</li>
+    <li>Ensure you have Flutter and Dart SDK installed on your system.</li>
+    <li>Execute <code>flutter clean</code> to remove any existing build artifacts.</li>
+    <li>Run <code>flutter pub get</code> to fetch dependencies specified in <code>pubspec.yaml</code>.</li>
+    <li>Run the project in debug or release mode using your IDE's tools or by executing <code>flutter run</code> command in the terminal.</li>
+  </ol>
 
+  <h2>Usage</h2>
+  <p>Once the app is running on your device or emulator, you can try out the features.</p>
+
+  <h2>Overview Of the app</h2>
+  <img src="https://github.com/Farhana007/sketch-app_-task/assets/106755038/adaff988-9124-43aa-b81a-9cf197b6e4fd" alt="Sketch App Overview">
+</body>
+
+</html>
